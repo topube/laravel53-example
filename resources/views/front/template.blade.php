@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ trans('front/site.title') }}</title>
-        <meta name="description" content="">    
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -67,7 +67,7 @@
                                     <li>
                                         {!! link_to_route('admin', trans('front/site.administration')) !!}
                                     </li>
-                                @elseif(session('statut') == 'redac') 
+                                @elseif(session('statut') == 'redac')
                                     <li>
                                         {!! link_to('blog', trans('front/site.redaction')) !!}
                                     </li>
@@ -92,13 +92,13 @@
                 </div>
             </div>
         </nav>
-        @yield('header')    
+        @yield('header')
     </header>
 
     <main class="container">
         @if(session()->has('ok'))
             @include('partials/error', ['type' => 'success', 'message' => session('ok')])
-        @endif  
+        @endif
         @if(isset($info))
             @include('partials/error', ['type' => 'info', 'message' => $info])
         @endif
@@ -109,7 +109,7 @@
         @yield('footer')
         <p class="text-center"><small>Copyright &copy; Momo</small></p>
     </footer>
-        
+
     {!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js') !!}
     {!! HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') !!}
 
